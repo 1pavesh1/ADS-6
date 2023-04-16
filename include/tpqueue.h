@@ -1,7 +1,13 @@
 // Copyright 2022 NNTU-CS
 #ifndef INCLUDE_TPQUEUE_H_
 #define INCLUDE_TPQUEUE_H_
+
 #include <algorithm>
+
+struct SYM {
+  char ch;
+  int prior;
+};
 
 template<typename T, int size>
 class TPQueue {
@@ -9,6 +15,7 @@ class TPQueue {
     T * arr;
     int head;
     int count = 0;
+    
  public:
     TPQueue() {
         arr = new T[size + 1];
@@ -22,7 +29,7 @@ class TPQueue {
                 arr[++head] = value;
             } else {
                 arr[++head] = value;
-                swap(arr[0], arr[head]);
+                std::swap(arr[0], arr[head]);
             }
         } else {
             count += 1;
@@ -43,11 +50,6 @@ class TPQueue {
     ~TPQueue() {
         delete[] arr;
     }
-};
-
-struct SYM {
-  char ch;
-  int prior;
 };
 
 #endif  // INCLUDE_TPQUEUE_H_
