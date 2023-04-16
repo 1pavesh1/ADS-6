@@ -17,8 +17,7 @@ class TPQueue {
     void push(T value) {
         if (head == -1) {
             arr[++head] = value;
-        }
-        else if (head == 0) {
+        } else if (head == 0) {
             if (arr[head].prior < value.prior) {
                 arr[++head] = value;
             } else {
@@ -31,7 +30,7 @@ class TPQueue {
             for (int i = 0; i < count + 1; ++i) {
                 for (int j = 0; j < count + 1; ++j) {
                     if (arr[j].prior > arr[j + 1].prior) {
-                        swap(arr[j], arr[j + 1]);
+                        std::swap(arr[j], arr[j + 1]);
                     }
                 }
             }
