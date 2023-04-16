@@ -15,6 +15,7 @@ class TPQueue {
     T * arr;
     int head;
     int count = 0;
+
  public:
     TPQueue() {
         arr = new T[size + 1];
