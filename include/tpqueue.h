@@ -1,7 +1,7 @@
 // Copyright 2022 NNTU-CS
 #ifndef INCLUDE_TPQUEUE_H_
 #define INCLUDE_TPQUEUE_H_
-
+#include <utility>
 #include <algorithm>
 
 struct SYM {
@@ -15,7 +15,6 @@ class TPQueue {
     T * arr;
     int head;
     int count = 0;
-    
  public:
     TPQueue() {
         arr = new T[size + 1];
